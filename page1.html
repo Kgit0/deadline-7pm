@@ -7,6 +7,7 @@
 		<title>Funds</title>
 		<link rel="stylesheet" type="text/css" href="page1-min.css"/>
 		<link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
 		<!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> -->
 		<!-- <link href="http://www.maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
 	</head>
@@ -130,7 +131,8 @@
 											</div>
 										</div>
 										<div class="card-body">
-											<h6>A proper line graph would require use of js libraries</h6>
+											<!-- <h6>A proper line graph would require use of js libraries</h6> -->
+											<canvas id="LeChart" width="100%" height="100px"></canvas>
 										</div>
 								</div>
 								
@@ -345,4 +347,21 @@
 			</div>
 		</div>
 	</body>
+
+	<script>
+		alert('Hi, I didnt really know what you meant by "clean it up" so i did a mobile version and also did the graph section using a js library(chart js); Please review and give feedback. Thanks \n :)')
+		let LeChart = document.getElementById('LeChart');
+		var myLineChart = new Chart(LeChart, {
+				type: 'line',
+				data: {
+					labels:['Oct 2018','', 'Nov 2018','', 'Dec 2018','', 'Jan 2019', '', 'Feb 2019'],
+					datasets:[{
+						data:[86,89,67,63,92,80,76,65,60,50],
+						fill:false,
+						borderColor:'lightblue',
+						label:'Total Asset Value'
+					}]
+				},
+			});
+	</script>
 </html>
